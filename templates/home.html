@@ -1,0 +1,36 @@
+<h1 style="text-align: center">Ride Share Bike Analytics</h1>
+<div style="margin: 0 auto; width: 50%">
+    <form action="bikes">
+        <input type="submit" value="CitiBike Data" />
+    </form>
+    <h2> Popular Start Stations</h2>
+    <p>
+        <b>Start Station Number</b>: Number Riders Who Started</p>
+    {% for key, value in result.items() %}
+    <p>
+        <b>{{ key }}</b>: {{ value }} </p>
+    {% endfor %}
+    <p>
+        The graph displays the 10 most popular start stations, and we can clearly see that station
+        <b>4214</b>
+        is the most popular. Ocean Front Walk and Navy is located in Venice along the beaches of Los Angeles with a 8.5 mile bike
+        path. We can imagine that the popular tourist spot is filled with young adults hanging around and enjoying a bike
+        ride along the ocean's breeze. The runner up station is 4210, Ocean Front Walk and North Venice, also another station
+        in by Venice beach.
+    </p>
+    <br>
+    <h2>Distances Travelled by Riders</h2>
+    <p>
+        <b>Distance (m)</b>: Number Riders</p>
+    {% for key, value in labels.items() %}
+    <p>
+        <b>{{ key }}</b>: {{ value }} </p>
+    {% endfor %}
+    <p>
+        Summing the data in given chart, and calculating the average, we see that the
+        <b>average user travels about {{ avg }} meters</b>. If the average user travels about 950 meters and most users spend
+        less than 15 minutes, we can calculate the average speed to be about 4 km/hr, which isn't too unreasonable for bike
+        speeds, considering the
+        <b>distance is measured from the start to end geocoordinate without considering the path taken</b>.
+    </p>
+</div>
